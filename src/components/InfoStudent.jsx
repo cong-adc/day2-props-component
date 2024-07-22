@@ -3,15 +3,16 @@ import React from "react";
 export default function InfoStudent({ student }) {
   return (
     <div>
-      <div>Họ tên: {student.name}</div>
+      <div>
+        Họ tên: {`${student.firstName || ""} ${student.lastName || ""}`}
+      </div>
       <div>Mô tả: {student.description}</div>
-      <i>MSSV: {student.mssv}</i>
+      <i>Email: {student.email}</i>
       <br />
       <br />
-      <strong>Lớp: {student.className}</strong>
-      <div>Khóa: {student.year}</div>
-      <span>Avatar:</span>
-      <img src={student.avatar} alt="logo" />
+      <strong>Contact: {student.contact}</strong>
+      <div>Gender: {student.gender}</div>
+      <div>Subject: {student.subject?.join("- ")}</div>
     </div>
   );
 }
